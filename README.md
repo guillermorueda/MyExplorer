@@ -3,10 +3,6 @@ MyExplorer
 
 This is a modern version of the desktop's File Explorer.
 
-
-Guillermo Rueda - http://guillermorueda.com
-Buy me a cup of coffee... The more coffee I can buy the more I can stay awake coding! :-) - http://donate.guillermorueda.com/paypal.html
-
 Why "My" Explorer? Because it does not only give you access to browse and manage all your files and folders in a touch first way, it also allows you to make it personal. You can make it yours by having your own favorites at hand and allowing you to pin to Start any folder, so that it is always very easy to reach those locations in a simple and friendly few steps.
 
 Restrictions to all Windows 8 applications that affect My Explorer: The following folders are not accessible to any Windows 8 application: System folders (i.e. program files); hidden and protected folders and files; executable files (i.e. exe, js)
@@ -31,3 +27,7 @@ English (United States)
 
 Additional terms
 This app let the user manage (including permanent delete) files and folders. Neither the developer nor the app will be responsible for data loss due to possible errors in the app.
+
+Guillermo Rueda - http://guillermorueda.com
+
+Buy me a cup of coffee... The more coffee I can buy the more I can stay awake coding! :-) - http://donate.guillermorueda.com/paypal.html
