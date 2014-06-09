@@ -1,0 +1,32 @@
+﻿.win-settingsflyout {
+    border-color: rgba(160, 0, 0, 1);
+}
+
+    .win-settingsflyout .win-header {
+        color: rgba(255, 255, 255, 1);
+        background-color: rgba(160, 0, 0, 1);
+    }
+
+        .win-settingsflyout .win-header .win-backbutton {
+            color: rgba(255, 255, 255, 1);
+            background-color: rgba(160, 0, 0, 1);
+            border-color: rgba(255, 255, 255, 1);
+        }
+
+        .win-settingsflyout .win-header .win-backbutton:active,
+        .win-settingsflyout .win-header .win-backbutton:hover:active {
+            color: rgba(160, 0, 0, 1);
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .win-settingsflyout .win-header .win-backbutton:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 1);
+        }
+
+    .win-settingsflyout #customStartOnPath {
+        margin-top: -20px;
+        font-size: small;
+        font-weight: lighter;
+        -ms-word-wrap: break-word;
+    }

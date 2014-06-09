@@ -1,0 +1,77 @@
+﻿<!doctype HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>About</title>
+
+    <!-- WinJS references -->
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- My_Explorer references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/settings/settings.css" rel="stylesheet" />
+</head>
+<body>
+    <div data-win-control="WinJS.UI.SettingsFlyout" aria-label="Options" data-win-options="{ settingsCommandId: 'about', width: 'narrow' }">
+        <div class="win-header">
+            <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+            <div class="win-label">About</div>
+            <img src="/images/smalllogo.png" style="position: absolute; right: 40px;" />
+        </div>
+        <div class="win-content">
+            <div class="win-settings-section">
+                <h3>Developer</h3>
+                <p>I created this app for fun, in my free time and my idea behind it is to give it to the people for everyone to use. I'll keep improving it and adding more functionality.</p>
+                <p>My Explorer is free of payment and ads and I'm planning on keeping it always like this.</p>
+            </div>
+            <div class="win-settings-section">
+                <h3>My Explorer</h3>
+                <p>This is a modern version of the desktop's File Explorer.</p>
+                <p>Why "My" Explorer? Because it does not only give you access to browse and manage all your files and folders in a touch first way, it also allows you to make it personal. You can make it yours by having your own favorites at hand and allowing you to pin to Start any folder, so that it is always very easy to reach those locations in a simple and friendly few steps.</p>
+                <div>
+                    Restrictions to all Windows 8 applications that affect My Explorer:
+                    <ul>
+                        <li>The following folders are not accessible to any Windows 8 application: System folders (i.e. program files); hidden and protected folders and files; executable files (i.e. exe, js)</li>
+                        <li>It is not possible to launch files that depend on other files (i.e. complete webpages, the ones that save an html file and a folder with its images)</li>
+                    </ul>
+                </div>
+                <div>
+                    Features:
+                    <ul>
+                        <li>Browse your computer, network locations, removable devices, homegroup computers and media server devices</li>
+                        <li>Manage favorites and recent groups</li>
+                        <li>Manage your files and folders (cut, copy, paste, move to, copy to, rename, recycle and delete)</li>
+                        <li>Snap the app to the side to use it as a fast file opener/switcher</li>
+                        <li>Pin folders to Start for fast and direct access to selected folders</li>
+                        <li>Use the share option to interact with other apps (i.e. e-mail attachment)</li>
+                        <li>Customize the look and feel of the app</li>
+                    </ul>
+                </div>
+                <p>Keywords: file; folder; manager; explorer; browse; computer</p>
+                <p>Release notes:</p>
+                <div>
+                    v1.1.0.0:
+                    <ul>
+                        <li>Added support to copy folders</li>
+                        <li>Added view option to appbar: thumbnails/details view; show/hide file name extensions</li>
+                        <li>Current folder path is now displayed on the top of the screen when the appbar is shown</li>
+                        <li>New tooltips added: on items on home screen, displays the path of the folder, if any; on computer folders, shows full name, type, size (for files only) and date modified</li>
+                        <li>Favorite and clear recent buttons added to home page</li>
+                        <li>On some screen sizes, items no longer re-position after selecting an item</li>
+                        <li>Visual improvements</li>
+                        <li>About page updated now with all the application information and the release notes in it</li>
+                        <li>Bug fixes</li>
+                    </ul>
+                </div>
+                <div>
+                    v1.0.0.0:
+                    <ul>
+                        <li>Initial release</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

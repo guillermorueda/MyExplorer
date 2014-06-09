@@ -1,0 +1,71 @@
+﻿<!doctype HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Options</title>
+
+    <!-- WinJS references -->
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <!-- My_Explorer references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/settings/settings.css" rel="stylesheet" />
+    <script src="/js/data.js"></script>
+    <script src="/pages/settings/options.js"></script>
+</head>
+<body>
+    <div data-win-control="WinJS.UI.SettingsFlyout" aria-label="Options" data-win-options="{ settingsCommandId: 'options', width: 'narrow' }">
+        <div class="win-header">
+            <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+            <div class="win-label">Options</div>
+            <img src="/images/smalllogo.png" style="position: absolute; right: 40px;" />
+        </div>
+        <div class="win-content">
+            <div class="win-settings-section">
+                <h3>Theme</h3>
+                <p>Switches the look of the application.</p>
+                <div id="themeStyleToggle" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Style', labelOn: 'Light', labelOff: 'Dark', checked: 'true'}"></div>
+                <p>Sets the image that is used for folder thumbnail.</p>
+                <div id="folderThumbnailToggle" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title: 'Folder thumbnail', labelOn: 'My Explorer', labelOff: 'Desktop icon', checked: 'true' }"></div>
+            </div>
+            <div class="win-settings-section">
+                <h3>Start</h3>
+                <p>Defines where the application should start when launched. Only applies to the main application, not pinned folders</p>
+                <label>Start on</label>
+                <select id="startOnSelect" aria-label="Start on">
+                    <option value="myExplorer">My Explorer</option>
+                    <option value="favorites">Favorites</option>
+                    <option value="recent">Recent</option>
+                    <option value="goTo">Go to</option>
+                    <option value="lastFolderOpened">Last folder opened</option>
+                    <option value="custom">Custom</option>
+                </select>
+                <p id="customStartOnPath"></p>
+            </div>
+            <div class="win-settings-section">
+                <h3>Duplicate name handling</h3>
+                <p>Establishes how file/folder duplicate names should be handled (for rename, cut, copy, paste, move to and copy to)</p>
+                <label>On file name conflict</label>
+                <select id="collisionOptionSelect" aria-label="Collision handling">
+                    <option value="generateUniqueName">Generate unique name</option>
+                    <option value="replaceExisting">Replace existing</option>
+                    <option value="failIfExists">Fail if exists</option>
+                </select>
+                <label>On folder name conflict</label>
+                <select id="folderCollisionOptionSelect" aria-label="Folder collision handling">
+                    <option value="generateUniqueName">Generate unique name</option>
+                    <option value="openIfExists">Merge folders</option>
+                    <option value="replaceExisting">Replace existing</option>
+                    <option value="failIfExists">Fail if exists</option>
+                </select>
+            </div>
+            <div class="win-settings-section">
+                <h3>Manage list</h3>
+                <p>Removes all items from the "Recent" group.</p>
+                <button id="clearRecentGroup" aria-label="Clear recent group" type="submit">Clear "Recent" group</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

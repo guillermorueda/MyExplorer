@@ -1,0 +1,278 @@
+﻿/* AppBar menu */
+#customTopAppBar {
+    color: rgba(255, 255, 255, 1);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+}
+
+.itemdetailpage section[role=main] {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+}
+
+.itemdetailpage .itemdetaillist {
+    height: 100%;
+    position: relative;
+    width: 100%;
+    z-index: 0;
+}
+
+    /* This selector is used to prevent ui-dark/light.css from overwriting changes
+       to .win-surface. */
+    .itemdetailpage .itemdetaillist .win-horizontal.win-viewport .win-surface {
+        margin-bottom: 60px;
+        margin-left: 45px;
+        margin-right: 115px;
+        margin-top: 128px;
+    }
+
+    .itemdetailpage .itemdetaillist .win-groupheader {
+        padding: 0;
+    }
+
+    /* Use grid and top level layout for truncation */
+    .itemdetailpage .itemdetaillist .group-header {
+        -ms-grid-columns: minmax(0, max-content) 7px max-content;
+        -ms-grid-rows: max-content;
+        display: -ms-inline-grid;
+        line-height: 1.5;
+    }
+
+    /* Override default button styles */
+    .itemdetailpage .itemdetaillist .group-header, .group-header:hover, .group-header:hover:active {
+        background: transparent;
+        border: 0;
+        margin-bottom: 1px;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 1px;
+        min-height: 0;
+        padding: 0;
+    }
+
+        .itemdetailpage .itemdetaillist .group-header .group-title {
+            display: inline-block;
+        }
+
+        .itemdetailpage .itemdetaillist .group-header .group-chevron {
+            -ms-grid-column: 3;
+            display: inline-block;
+        }
+
+            .itemdetailpage .itemdetaillist .group-header .group-chevron::before {
+                content: "\E26B";
+                font-family: 'Segoe UI Symbol';
+            }
+
+    .itemdetailpage .itemdetaillist .win-container:hover {
+        background-color: transparent;
+    }
+
+    .itemdetailpage .itemdetaillist .win-selected .win-selectionbackground,
+    .itemdetailpage .itemdetaillist .win-selected:hover .win-selectionbackground,
+    .itemdetailpage .itemdetaillist .win-selected .win-selectionborder {
+        background-color: rgba(160, 0, 0, 1);
+    }
+
+    .itemdetailpage .itemdetaillist .win-selected .win-selectioncheckmarkbackground {
+        border-top: solid 20px rgba(160, 0, 0, 1);
+        border-right: solid 20px rgba(160, 0, 0, 1);
+        border-left: solid 20px transparent;
+        border-bottom: solid 20px transparent;
+    }
+
+    .itemdetailpage .itemdetaillist .item {
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: 1fr 70px;
+        display: -ms-grid;
+        height: 150px;
+        width: 150px;
+    }
+
+        .itemdetailpage .itemdetaillist .item .item-image {
+            -ms-grid-row-span: 2;
+        }
+
+        .itemdetailpage .itemdetaillist .item .item-overlay {
+            -ms-grid-row: 2;
+            -ms-grid-rows: 1fr 2px;
+            display: -ms-grid;
+            padding: 2px 6px;
+            margin-top: 24px;
+        }
+
+            .itemdetailpage .itemdetaillist .item .item-overlay .item-title {
+                -ms-grid-row: 1;
+                overflow: hidden;
+                width: 120px;
+                -ms-grid-row-align: center;
+                max-height: 40px;
+                -ms-word-wrap: break-word;
+            }
+
+                .itemdetailpage .itemdetaillist .item .item-overlay .item-title .item-name {
+                }
+
+                .itemdetailpage .itemdetaillist .item .item-overlay .item-title .item-extension {
+                    display: none;
+                    visibility: hidden;
+                }
+
+            .itemdetailpage .itemdetaillist .item .item-overlay .item-type {
+                display: none;
+                visibility: hidden;
+            }
+
+            .itemdetailpage .itemdetaillist .item .item-overlay .item-size {
+                display: none;
+                visibility: hidden;
+            }
+
+            .itemdetailpage .itemdetaillist .item .item-overlay .item-datemodified {
+                display: none;
+                visibility: hidden;
+            }
+
+    .itemdetailpage .itemdetaillist .item-details {
+        -ms-grid-columns: 110px 1fr;
+        -ms-grid-rows: 1fr;
+        display: -ms-grid;
+        height: 110px;
+        width: 470px;
+    }
+
+        .itemdetailpage .itemdetaillist .item-details .item-image-details {
+            -ms-grid-row-span: 2;
+        }
+
+        .itemdetailpage .itemdetaillist .item-details .item-overlay-details {
+            -ms-grid-column: 2;
+            margin-left: 10px;
+            margin-right: 10px;
+            -ms-grid-row-align: center;
+            max-height: 100px;
+        }
+
+            .itemdetailpage .itemdetaillist .item-details .item-overlay-details .item-title-details {
+                overflow: hidden;
+                max-height: 40px;
+                -ms-word-wrap: break-word;
+            }
+
+                .itemdetailpage .itemdetaillist .item-details .item-overlay-details .item-title-details .item-name-details {
+                }
+
+                .itemdetailpage .itemdetaillist .item-details .item-overlay-details .item-title-details .item-extension-details {
+                    display: none;
+                    visibility: hidden;
+                }
+
+            .itemdetailpage .itemdetaillist .item-details .item-overlay-details .item-type-details {
+                max-height: 20px;
+                overflow: hidden;
+                font-weight: lighter;
+            }
+
+            .itemdetailpage .itemdetaillist .item-details .item-overlay-details .item-size-details {
+                max-height: 20px;
+                overflow: hidden;
+                font-weight: lighter;
+            }
+
+            .itemdetailpage .itemdetaillist .item-details .item-overlay-details .item-datemodified-details {
+                max-height: 20px;
+                overflow: hidden;
+                font-weight: lighter;
+            }
+
+@media screen and (-ms-view-state: fullscreen-landscape), screen and (-ms-view-state: fullscreen-portrait), screen and (-ms-view-state: filled) {
+    .itemdetailpage .itemdetaillist .item .item-overlay {
+        background: rgba(0,0,0,0.65);
+    }
+
+        .itemdetailpage .itemdetaillist .item .item-overlay .item-title {
+            color: rgba(255,255,255,0.87);
+        }
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape) and (-ms-high-contrast), screen and (-ms-view-state: fullscreen-portrait) and (-ms-high-contrast), screen and (-ms-view-state: filled) and (-ms-high-contrast) {
+    .itemdetailpage .itemdetaillist .item .item-overlay {
+        color: WindowText;
+    }
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .itemdetailpage section[role=main] {
+        -ms-grid-row: 2;
+        -ms-grid-row-span: 1;
+    }
+
+    .itemdetailpage .itemdetaillist .win-vertical.win-viewport .win-surface {
+        margin-bottom: 30px;
+        margin-top: 0;
+    }
+
+    .itemdetailpage .itemdetaillist .win-container {
+        margin-bottom: 15px;
+        margin-left: 13px;
+        margin-right: 35px;
+        padding: 7px;
+    }
+
+    .itemdetailpage .itemdetaillist .item,
+    .itemdetailpage .itemdetaillist .item-details {
+        -ms-grid-columns: 60px 1fr;
+        -ms-grid-rows: 1fr;
+        display: -ms-grid;
+        height: 60px;
+        width: 272px;
+    }
+
+        .itemdetailpage .itemdetaillist .item .item-image,
+        .itemdetailpage .itemdetaillist .item-details .item-image-details {
+            -ms-grid-column: 1;
+            -ms-grid-row-span: 1;
+            height: 60px;
+            width: 60px;
+        }
+
+        .itemdetailpage .itemdetaillist .item .item-overlay,
+        .itemdetailpage .itemdetaillist .item-details .item-overlay-details {
+            -ms-grid-column: 2;
+            -ms-grid-row: 1;
+            -ms-grid-row-align: center;
+            background: transparent;
+            display: inline-block;
+            margin-left: 10px;
+            padding: 0;
+            margin-top: 0px;
+        }
+
+            .itemdetailpage .itemdetaillist .item .item-overlay .item-title,
+            .itemdetailpage .itemdetaillist .item-details .item-overlay-details .item-title-details {
+                max-height: 60px;
+                width: 202px;
+            }
+
+        .itemdetailpage .itemdetaillist .item-details .item-overlay-details .item-type-details {
+                display: none;
+                visibility: hidden;
+            }
+
+        .itemdetailpage .itemdetaillist .item-details .item-overlay-details .item-size-details {
+            display: none;
+            visibility: hidden;
+        }
+
+        .itemdetailpage .itemdetaillist .item-details .item-overlay-details .item-datemodified-details {
+            display: none;
+            visibility: hidden;
+        }
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+    .itemdetailpage .itemdetaillist .win-horizontal.win-viewport .win-surface {
+        margin-left: 25px;
+    }
+}

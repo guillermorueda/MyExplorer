@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>groupDetailPage</title>
+
+    <!-- WinJS references -->
+    <!-- <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" /> -->
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/groupDetail/groupDetail.css" rel="stylesheet" />
+    <script src="/js/data.js"></script>
+    <script src="/pages/groupDetail/groupDetail.js"></script>
+</head>
+<body>
+    <!-- Define the header menu -->
+    <div id="headerMenu" data-win-control="WinJS.UI.Menu">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'goToMenuItem', label:'Go to...' }"></button>
+        <hr data-win-control="WinJS.UI.MenuCommand" data-win-options="{ type: 'separator' }" />
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'favoritesMenuItem', label: 'Favorites' }"></button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'recentMenuItem', label:'Recent' }"></button>
+        <hr data-win-control="WinJS.UI.MenuCommand" data-win-options="{ type: 'separator' }" />
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'homeMenuItem', label: 'My Explorer' }"></button>
+    </div>
+
+    <!-- These templates are used to display each item in the ListView declared below. -->
+    <div class="headertemplate" data-win-control="WinJS.Binding.Template">
+        <img class="group-image" src="#" data-win-bind="src: image; alt: title" />
+        <h4 class="group-description" data-win-bind="innerHTML: description"></h4>
+    </div>
+    <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
+        <div class="item">
+            <img class="item-image" src="#" data-win-bind="src: thumbnail; alt: title" />
+            <div class="item-info">
+                <h4 class="item-title" data-win-bind="textContent: title"></h4>
+                <h4 class="item-path" data-win-bind="textContent: path"></h4>
+                <h4 class="item-date" data-win-bind="textContent: date"></h4>
+            </div>
+        </div>
+    </div>
+
+    <!-- The content that will be loaded and displayed. -->
+    <div class="groupdetailpage fragment">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle"></span>
+                <span class="chevron win-type-x-large">&#xe099</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div class="itemslist win-selectionstylefilled" aria-label="List of this group's items" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'multi' }"></div>
+        </section>
+    </div>
+
+    <!-- AppBar -->
+    <div id="appBar" data-win-control="WinJS.UI.AppBar">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdAddFavorite', label: 'Add favorite', tooltip: 'Add favorite', icon: 'add',       section: 'global' }"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdClearRecent', label: 'Clear recent', tooltip: 'Clear recent', icon: 'clear',     section: 'global' }"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdSelectAll',   label: 'Select all',   tooltip: 'Select all',   icon: 'selectall', section: 'global' }"></button>
+
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdClearSelection', label: 'Clear selection', tooltip: 'Clear selection', icon: 'clearselection', section: 'selection', hidden: true }"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdRemove',         label: 'Remove',          tooltip: 'Remove',          icon: 'remove',         section: 'selection', extraClass: 'multiSelect' }"></button>
+    </div>
+</body>
+</html>

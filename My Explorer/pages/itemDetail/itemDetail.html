@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>itemDetailPage</title>
+
+    <!-- WinJS references -->
+    <!-- <link href="//Microsoft.WinJS.1.0/css/ui-lightdark.css" rel="stylesheet" /> -->
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/itemDetail/itemDetail.css" rel="stylesheet" />
+    <script src="/js/data.js"></script>
+    <script src="/pages/itemDetail/itemDetail.js"></script>
+</head>
+<body>
+    <!-- Define the header menu -->
+    <div id="headerMenu" data-win-control="WinJS.UI.Menu">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'goToMenuItem', label:'Go to...' }"></button>
+        <hr data-win-control="WinJS.UI.MenuCommand" data-win-options="{ type: 'separator' }" />
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'favoritesMenuItem', label: 'Favorites' }"></button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'recentMenuItem', label:'Recent' }"></button>
+        <hr data-win-control="WinJS.UI.MenuCommand" data-win-options="{ type: 'separator' }" />
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'homeMenuItem', label: 'My Explorer' }"></button>
+    </div>
+
+    <!-- Define the custom AppBar on top -->
+    <div id="customTopAppBar" data-win-control="WinJS.UI.AppBar" aria-label="Current folder path" data-win-options="{ layout: 'custom', placement: 'top' }">
+    </div>
+
+    <!-- The content that will be loaded and displayed. -->
+    <div class="itemdetailpage fragment">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle"></span>
+                <span class="chevron win-type-x-large">&#xe099</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div class="itemdetaillist win-selectionstylefilled" aria-label="List of items" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'multi' }"></div>
+        </section>
+    </div>
+
+    <!-- View menu -->
+    <div id="viewFlyout" data-win-control="WinJS.UI.Menu">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'viewFileNameExtensionsMenuItem', label: 'File name extensions',  type: 'toggle' }"></button>
+        <hr data-win-control="WinJS.UI.MenuCommand" data-win-options="{ type: 'separator' }" />
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'viewDetailsMenuItem',        label: 'Details',               type: 'toggle' }"></button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'viewThumbnailsMenuItem',     label: 'Thumbnails',            type: 'toggle', selected: true }"></button>
+    </div>
+    <!-- SortBy menu -->
+    <div id="sortByFlyout" data-win-control="WinJS.UI.Menu">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'sortAscendingMenuItem',      label: 'Ascending',     type: 'toggle', selected: true }"></button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'sortDescendingMenuItem',     label: 'Descending',    type: 'toggle' }"></button>
+        <hr data-win-control="WinJS.UI.MenuCommand" data-win-options="{ type: 'separator' }" />
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'sortByNameMenuItem',         label: 'Name',          type: 'toggle', selected: true }"></button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'sortByDateModifiedMenuItem', label: 'Date modified', type: 'toggle' }"></button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'sortByTypeMenuItem',         label: 'Type',          type: 'toggle' }"></button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'sortBySizeMenuItem',         label: 'Size',          type: 'toggle' }"></button>
+    </div>
+    <!-- NewFolder menu -->
+    <div id="newFolderFlyout" data-win-control="WinJS.UI.Flyout">
+        <form onsubmit="return false;">
+            <p>
+                <input type="text" id="newFolderName" />
+            </p>
+            <button id="newFolderButton" type="submit">Create folder</button>
+        </form>
+    </div>
+    <!-- Manage menu -->
+    <div id="manageFlyout" data-win-control="WinJS.UI.Menu">
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'renameMenuItem',  label: 'Rename',  type: 'flyout', flyout: select('#renameFlyout') }"></button>
+        <hr data-win-control="WinJS.UI.MenuCommand" data-win-options="{ type: 'separator' }" />
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'deleteMenuItem',  label: 'Delete',  type: 'flyout', flyout: select('#deleteFlyout') }"></button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'recycleMenuItem', label: 'Recycle', type: 'button' }"></button>
+        <hr data-win-control="WinJS.UI.MenuCommand" data-win-options="{ type: 'separator' }" />
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'copyToMenuItem',  label: 'Copy to', type: 'button' }"></button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'moveToMenuItem',  label: 'Move to', type: 'button' }"></button>
+        <hr data-win-control="WinJS.UI.MenuCommand" data-win-options="{ type: 'separator' }" />
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'copyMenuItem',    label: 'Copy',    type: 'button' }"></button>
+        <button data-win-control="WinJS.UI.MenuCommand" data-win-options="{ id: 'cutMenuItem',     label: 'Cut',     type: 'button' }"></button>
+    </div>
+    <!-- Delete sub-menu -->
+    <div id="deleteFlyout" data-win-control="WinJS.UI.Flyout">
+        <form onsubmit="return false;">
+            <p>You are about to permanently delete <span id="deleteSubmenuText"></span></p>
+            <button id="deleteButton" type="submit">Delete</button>
+        </form>
+    </div>
+    <!-- Rename menu -->
+    <div id="renameFlyout" data-win-control="WinJS.UI.Flyout">
+        <form onsubmit="return false;">
+            <p>
+                <input type="text" id="renameName" />
+            </p>
+            <button id="renameButton" type="submit">Rename</button>
+        </form>
+    </div>
+    <!-- AppBar -->
+    <div id="appBar" data-win-control="WinJS.UI.AppBar">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdUnpin',      label: 'Unpin',      tooltip: 'Unpin',      icon: 'unpin',      section: 'global', hidden: true }"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdPin',        label: 'Pin',        tooltip: 'Pin',        icon: 'pin',        section: 'global' }"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdUnfavorite', label: 'Remove',     tooltip: 'Remove',     icon: 'unfavorite', section: 'global', hidden: true }"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdFavorite',   label: 'Add',        tooltip: 'Add',        icon: 'favorite',   section: 'global' }"></button>
+        <hr     data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ type: 'separator', section: 'global' }" />
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdPaste',      label: 'Paste',      tooltip: 'Paste',      icon: 'paste',      section: 'global', hidden: true }"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdNewFolder',  label: 'New folder', tooltip: 'New folder', icon: 'newfolder',  section: 'global', type: 'flyout', flyout: select('#newFolderFlyout') }"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdSortBy',     label: 'Sort by',    tooltip: 'Sort by',    icon: 'sort',       section: 'global', type: 'flyout', flyout: select('#sortByFlyout'), hidden: true }"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdView',       label: 'View',       tooltip: 'View',       icon: 'view',       section: 'global', type: 'flyout', flyout: select('#viewFlyout') }"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdSelectAll',  label: 'Select all', tooltip: 'Select all', icon: 'selectall',  section: 'global' }"></button>
+
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdClearSelection', label: 'Clear selection', tooltip: 'Clear selection', icon: 'clearselection', section: 'selection', hidden: true }"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdManage',         label: 'Manage',          tooltip: 'Manage',          icon: 'manage',         section: 'selection', extraClass: 'multiSelect', type: 'flyout', flyout: select('#manageFlyout') }"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{ id: 'cmdOpenWith',       label: 'Open with',       tooltip: 'Open with',       icon: 'openwith',       section: 'selection', extraClass: 'singleSelect' }"></button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="34596GuillermoRueda.MyExplorer" Version="1.1.0.0" Publisher="CN=52A55EA1-5ADD-4039-B0DB-B214D7D83E86" />
+  <Properties>
+    <DisplayName>My Explorer</DisplayName>
+    <PublisherDisplayName>Guillermo Rueda</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="My Explorer" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="My Explorer" ForegroundText="light" BackgroundColor="#A00000" ToastCapable="true">
+        <DefaultTile ShowName="allLogos" ShortName="My Explorer" />
+        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#A00000" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="videosLibrary" />
+    <Capability Name="picturesLibrary" />
+    <Capability Name="musicLibrary" />
+  </Capabilities>
+</Package>
